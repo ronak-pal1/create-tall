@@ -7,6 +7,7 @@
   "bin": {
     "create-tall": "./index.js"
   },
+  "preferGlobal": true,
   "files": ["index.js"],
   "keywords": ["cli", "scaffold", "tall", "tooling", "create-tall", "create template"],
   "author": "Ronak Paul <ronakpaul882@gmail.com>",
