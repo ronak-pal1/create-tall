@@ -93,8 +93,8 @@ async function main() {
 
   // --- Step 9: Set paths dynamically based on choices ---
   const foldersToFetch = [];
-  if (frontend !== "none") foldersToFetch.push(frontend);
-  if (backend !== "none") foldersToFetch.push(backend);
+  if (frontend !== "none") foldersToFetch.push("templates/" + frontend);
+  if (backend !== "none") foldersToFetch.push("templates/" + backend);
   if (needCICD) foldersToFetch.push("github-actions");
   execSync(`git sparse-checkout set ${foldersToFetch.join(" ")}`);
 
@@ -106,12 +106,23 @@ async function main() {
     console.error("❌ Git pull failed.");
   }
 
-  // --- Step 11: Rename structure ---
-  if (frontend !== "none" && fs.existsSync(frontend)) {
-    fs.renameSync(frontend, "client");
+  // cleanup unwanted root files
+  ["README.md", "package.json", ".gitignore"].forEach((file) => {
+    if (fs.existsSync(file)) fs.rmSync(file, { force: true });
+  });
+
+  // --- Step 11: Rename structure (move out of templates folder) ---
+  if (frontend !== "none" && fs.existsSync(`templates/${frontend}`)) {
+    fs.renameSync(`templates/${frontend}`, "client");
   }
-  if (backend !== "none" && fs.existsSync(backend)) {
-    fs.renameSync(backend, "server");
+
+  if (backend !== "none" && fs.existsSync(`templates/${backend}`)) {
+    fs.renameSync(`templates/${backend}`, "server");
+  }
+
+  // optional: cleanup the now-empty templates folder
+  if (fs.existsSync("templates")) {
+    fs.rmSync("templates", { recursive: true, force: true });
   }
 
   // --- Step 12: Setup CI/CD Workflows ---
