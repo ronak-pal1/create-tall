@@ -107,7 +107,7 @@ async function main() {
   }
 
   // cleanup unwanted root files
-  ["README.md", "package.json", ".gitignore"].forEach((file) => {
+  ["README.md", "package.json", ".gitignore", "LICENSE"].forEach((file) => {
     if (fs.existsSync(file)) fs.rmSync(file, { force: true });
   });
 
