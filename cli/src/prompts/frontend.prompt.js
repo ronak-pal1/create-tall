@@ -5,7 +5,7 @@ export async function promptFrontend() {
     {
       type: "list",
       name: "frontend",
-      message: "Choose your frontend framework:",
+      message: "Choose your frontend template:",
       choices: ["react-app", "None"],
     },
   ]);

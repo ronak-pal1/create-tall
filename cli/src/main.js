@@ -9,7 +9,7 @@ import { logStep } from "./utils/logger.js";
 import { completionLog } from "./setup/complete.setup.log.js";
 
 export async function main() {
-  console.log("\n🚀 Welcome to New create-tall (Create Template All)\n");
+  console.log("\n🚀 Welcome to create-tall CLI (Create Template All CLI)\n");
 
   const projectName = await promptProjectName();
   const frontend = await promptFrontend();
@@ -25,7 +25,7 @@ export async function main() {
   fs.mkdirSync(projectPath);
   process.chdir(projectPath);
 
-  logStep("📁 Creating project structure...");
+  logStep("📁 Creating project structure...\n");
 
   await initGitRepo();
   await setSparseCheckout(frontend, backend, needCICD);

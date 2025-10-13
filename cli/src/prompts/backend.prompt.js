@@ -5,7 +5,7 @@ export async function promptBackend() {
     {
       type: "list",
       name: "backend",
-      message: "Choose your backend framework:",
+      message: "Choose your backend template:",
       choices: ["express-app", "None"],
     },
   ]);
