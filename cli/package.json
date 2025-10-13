@@ -1,15 +1,24 @@
 {
   "name": "create-tall",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A CLI tool to quickly scaffold any stack projects.",
   "main": "index.js",
   "type": "module",
   "bin": {
-    "create-tall": "./index.js"
+    "create-tall": "./bin/create-tall.js"
   },
   "preferGlobal": true,
-  "files": ["index.js"],
-  "keywords": ["cli", "scaffold", "tall", "tooling", "create-tall", "create template"],
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "cli",
+    "scaffold",
+    "tall",
+    "tooling",
+    "create-tall",
+    "create template"
+  ],
   "author": "Ronak Paul <ronakpaul882@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/ronak-pal1/create-tall#readme",
