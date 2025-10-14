@@ -5,8 +5,13 @@ if (dotenv.config().error) {
   throw new Error("Error loading .env file");
 }
 
+
+// add your environment variables here
 export const config = {
-  JWT_SECRET: process.env.JWT_SECRET,
   PORT: process.env.PORT || 8000,
   ENV: process.env.NODE_ENV || 'development',
+  FRONTEND_URL: process.env.FRONTEND_URL || "http://localhost:5173",
+  MONGO_URI: process.env.MONGO_URI,
+  ACCESS_TOKEN_SECRET: process.env.ACCESS_TOKEN_SECRET,
+  REFRESH_TOKEN_SECRET: process.env.REFRESH_TOKEN_SECRET,
 };
