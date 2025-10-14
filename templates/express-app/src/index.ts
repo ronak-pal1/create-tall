@@ -34,7 +34,7 @@ app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello World! from create-tall");
 });
 
 app.use("/api/v1", v1Router);
