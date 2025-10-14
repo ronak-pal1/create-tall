@@ -1,7 +1,7 @@
 import { GoChevronRight } from "react-icons/go";
 import { MdOutlineCopyAll } from "react-icons/md";
 import { GetRequiredSvg } from "./svg";
-import terminalImage from "../assets/terminal.png";
+import terminalImage from "/terminal.png";
 
 const HeroSection = () => {
   const handleCopy = () => {
