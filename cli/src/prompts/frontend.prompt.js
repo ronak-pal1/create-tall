@@ -1,37 +1,53 @@
-import inquirer from "inquirer";
+import select from '@inquirer/select';
 
 export const frontendTemplates = [
   {
     name: "React.js + TypeScript",
     value: "react-app",
     tags: ["typescript", "react"],
+    description: "React framework with TypeScript, Tailwind, Auth support.",
+  },
+  {
+    name: "React.js + TypeScript + Redux",
+    value: "react-redux-app",
+    tags: ["typescript", "react", "redux"],
+    description: "React framework with TypeScript, Tailwind, Redux, Auth support.",
   },
   {
     name: "Next.js + TypeScript",
     value: "next-app",
     tags: ["typescript", "nextjs"],
+    description: "Next.js framework with TypeScript support.",
+  },
+  {
+    name: "Vue.js + TypeScript",
+    value: "vue-app",
+    tags: ["typescript", "vue"],
+    description: "Vue.js framework with TypeScript support.",
   },
 ];
 
 
 export async function promptFrontend() {
 
-  const choices = [...frontendTemplates.map((template) => template.name), "None"];
-
-  const { frontend } = await inquirer.prompt([
+  const choices = [...frontendTemplates.map((template) => (
     {
-      type: "list",
-      name: "frontend",
-      message: "Choose your frontend template:",
-      choices,
-    },
-  ]);
+      name: template.name,
+      value: template.value,
+      description: template.description,
+    }
+  )), {
+    name: "None",
+    value: null,
+    description: "No frontend template.",
+  }];
 
-  if (frontend === "None") {
-    return null;
-  }
 
-  const template = frontendTemplates.find((template) => template.name === frontend);
+  const frontend = await select({
+    message: 'Choose your frontend template:',
+    choices,
+  });
 
-  return template.value;
+
+  return frontend;
 }

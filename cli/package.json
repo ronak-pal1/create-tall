@@ -1,15 +1,15 @@
 {
   "name": "create-tall",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A CLI tool to quickly scaffold any stack projects.",
-  "main": "index.js",
   "type": "module",
   "bin": {
     "create-tall": "./bin/create-tall.js"
   },
   "preferGlobal": true,
   "files": [
-    "index.js"
+    "bin/",
+    "src/"
   ],
   "keywords": [
     "cli",
