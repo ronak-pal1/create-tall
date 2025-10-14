@@ -8,8 +8,8 @@ const Header = () => {
   return (
     <header className="bg-transparent flex justify-between items-center sticky top-0 z-50 px-8 py-7 backdrop-blur-sm">
       <div className="flex items-center gap-4 cursor-pointer">
-        <img src={lightLogo} alt="Logo" className="w-[35px] object-contain"/>
-        <h1 className="text-xl text-white">Create Tall</h1>
+        <img src={lightLogo} alt="Logo" className="w-[25px] sm:w-[35px] object-contain"/>
+        <h1 className="text-base sm:text-xl text-white">Create Tall</h1>
       </div>
       <div className="flex items-center gap-5">
 
@@ -37,7 +37,7 @@ const Header = () => {
         <Link
           to="https://tall.docs.ronakpaul.com"
           target="_blank"
-          className="text-white bg-blue-700 px-5 py-1 text-sm rounded-full cursor-pointer hover:scale-105 transition-all font-light flex items-center gap-2"
+          className="text-white bg-blue-700 px-3 sm:px-5 py-1 text-xs sm:text-sm rounded-full cursor-pointer hover:scale-105 transition-all font-light flex items-center gap-2"
         >
           <p>Read Docs</p>
           <LiaArrowRightSolid />

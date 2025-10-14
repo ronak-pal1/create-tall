@@ -11,7 +11,7 @@ const HeroSection = () => {
   return (
     <section className="h-[80vh] md:h-screen w-full relative">
       <div className="text-white w-full text-center flex flex-col justify-center items-center mt-36 lg:mt-10 gap-y-20">
-        <div className="text-center space-y-7 px-14 z-10">
+        <div className="text-center space-y-7 px-10 z-10">
           <h2 className="text-2xl sm:text-3xl font-bold">Create Tall CLI</h2>
           <p className="text-sm sm:text-lg font-light">
             A powerful tool to create any stack applications with ease and all
@@ -28,20 +28,18 @@ const HeroSection = () => {
           <div>
             <MdOutlineCopyAll
               onClick={handleCopy}
-              className="cursor-pointer hover:text-amber-500"
+              className="cursor-pointer hover:text-amber-500 active:text-amber-500"
             />
           </div>
         </div>
       </div>
 
       <div className="absolute bottom-0  w-full  flex justify-center z-10">
-        <div className="h-[250px] sm:h-[300px] lg:h-[500px] w-[85%] lg:w-[70%] bg-black rounded-2xl shadowed-div">
+        <div className="h-[280px] sm:h-[450px] lg:h-[500px] w-[90%] lg:w-[65%] bg-black rounded-2xl shadowed-div">
           <img
             src={terminalImage}
             alt="Terminal Image"
-            width="100%"
-            height="100%"
-            className="object-cover"
+            className="w-full h-full object-fill"
           />
         </div>
       </div>
