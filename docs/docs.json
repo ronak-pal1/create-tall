@@ -3,9 +3,9 @@
   "theme": "linden",
   "name": "create-tall",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#1447e6",
+    "light": "#0096FF",
+    "dark": "#1447e6"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -44,8 +44,8 @@
     ]
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png"
   },
   "navbar": {
     "links": [
@@ -63,18 +63,6 @@
       "label": "Dashboard",
       "href": "https://tall.ronakpaul.com"
     }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
   },
   "footer": {
     "socials": {
