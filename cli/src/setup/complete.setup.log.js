@@ -6,7 +6,7 @@ export function completionLog(projectName, frontend, backend, needCICD) {
   if (backend !== "none") console.log(" ├── server/   (backend)");
   if (needCICD) console.log(" └── .github/workflows/ (CI/CD)");
 
-  console.log("\n Please do the following:");
+  console.log(`\n Please do the following in ${projectName} folder: `);
   console.log("cd client && npm install");
   console.log("cd server && npm install");
   console.log("\n🚀 Ready to build!");

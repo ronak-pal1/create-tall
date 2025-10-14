@@ -1,6 +1,6 @@
 {
   "name": "create-tall",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "A CLI tool to quickly scaffold any stack projects.",
   "main": "index.js",
   "type": "module",
@@ -17,11 +17,15 @@
     "tall",
     "tooling",
     "create-tall",
-    "create template"
+    "create template",
+    "create tall",
+    "tall",
+    "full stack template",
+    "starter template"
   ],
   "author": "Ronak Paul <ronakpaul882@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/ronak-pal1/create-tall#readme",
+  "homepage": "https://tall.ronakpaul.com",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ronak-pal1/create-tall.git"
@@ -30,6 +34,9 @@
     "url": "https://github.com/ronak-pal1/create-tall/issues"
   },
   "dependencies": {
+    "chalk": "^5.6.2",
+    "commander": "^14.0.1",
+    "figlet": "^1.9.3",
     "inquirer": "^12.9.6"
   },
   "engines": {

@@ -36,9 +36,7 @@ export async function setupCICD(needCICD, cicdTemplates) {
 
     // Copy the file
     fs.copyFileSync(templatePath, path.join(workflowsDir, targetName));
-    console.log(
-      `✅ Added ${template} → ${path.join(workflowsDir, targetName)}`
-    );
+    
   });
 
   console.log("🎉 GitHub Actions setup complete!");

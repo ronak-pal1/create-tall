@@ -7,14 +7,29 @@ import fs from "fs";
 import path from "path";
 import { logStep } from "./utils/logger.js";
 import { completionLog } from "./setup/complete.setup.log.js";
+import { printBanner } from "./utils/print.banner.js";
+import checkCommand from "./commands/check.command.js";
+import { frontendTemplates } from "./prompts/frontend.prompt.js";
+import { backendTemplates } from "./prompts/backend.prompt.js";
 
 export async function main() {
+  const { project: cmdProject, frontend: cmdFrontend, backend: cmdBackend, cicd: cmdCICD, prompt: cmdPrompt } = checkCommand();
+
+  printBanner("Create    Tall");
   console.log("\n🚀 Welcome to create-tall CLI (Create Template All CLI)\n");
 
-  const projectName = await promptProjectName();
-  const frontend = await promptFrontend();
-  const backend = await promptBackend();
-  const { needCICD, cicdTemplates } = await promptCICD();
+
+  const projectName = cmdProject || await promptProjectName();
+  const frontend = cmdFrontend || await promptFrontend();
+  const backend = cmdBackend || await promptBackend();
+
+
+
+  const frontendTags = frontendTemplates.find((template) => template.value === frontend)?.tags;
+  const backendTags = backendTemplates.find((template) => template.value === backend)?.tags;
+
+
+  const { needCICD, cicdTemplates } = await promptCICD(cmdCICD, frontendTags, backendTags);
 
   const projectPath = path.join(process.cwd(), projectName);
   if (fs.existsSync(projectPath)) {
@@ -39,4 +54,6 @@ export async function main() {
   completionLog(projectName, frontend, backend, needCICD)
 }
 
-main();
+main().catch((error) => {
+  process.exit(1);
+});
