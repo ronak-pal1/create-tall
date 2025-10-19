@@ -24,6 +24,10 @@ export async function main() {
   const backend = cmdBackend || await promptBackend();
 
 
+  if (!frontend && !backend) {
+    console.error("❌ Please select at least one frontend or backend template.");
+    process.exit(1);
+  }
 
   const frontendTags = frontendTemplates.find((template) => template.value === frontend)?.tags;
   const backendTags = backendTemplates.find((template) => template.value === backend)?.tags;

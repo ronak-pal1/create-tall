@@ -13,7 +13,7 @@ export const handleLogout = (requiredRole: AUTH_ROLES) => {
         (requiredRole == AUTH_ROLES.USER && !req.user) ||
         (requiredRole == AUTH_ROLES.ADMIN && !req.admin)
       ) {
-        next(new AppError("UnAuthorized", 401));
+        next(new AppError("Unauthorized", 401));
         return;
       }
 

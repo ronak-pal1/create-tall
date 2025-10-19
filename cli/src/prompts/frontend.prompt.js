@@ -20,7 +20,7 @@ export const frontendTemplates = [
     description: "Next.js framework with TypeScript support.",
   },
   {
-    name: "Vue.js + TypeScript",
+    name: "Vue.js + TypeScript (Under Development)",
     value: "vue-app",
     tags: ["typescript", "vue"],
     description: "Vue.js framework with TypeScript support.",
@@ -46,6 +46,7 @@ export async function promptFrontend() {
   const frontend = await select({
     message: 'Choose your frontend template:',
     choices,
+    pageSize: 10,
   });
 
 

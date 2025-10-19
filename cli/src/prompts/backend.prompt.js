@@ -14,13 +14,13 @@ export const backendTemplates = [
     description: "Nest.js framework with TypeScript support.",
   },
   {
-    name: "Fastify",
+    name: "Fastify (Under Development)",
     value: "fastify-app",
     tags: ["fastify"],
     description: "Fastify framework with TypeScript support.",
   },
   {
-    name: "Go",
+    name: "Go (Under Development)",
     value: "go-app",
     tags: ["go"],
     description: "Go framework with TypeScript support.",
@@ -41,6 +41,7 @@ export async function promptBackend() {
   const backend = await select({
     message: 'Choose your backend template:',
     choices,
+    pageSize: 10,
   });
 
   return backend;
