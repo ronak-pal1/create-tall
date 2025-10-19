@@ -1,5 +1,7 @@
+import chalk from "chalk";
+
 export function completionLog(projectName, frontend, backend, needCICD) {
-  console.log("\n✅ Setup complete!");
+  console.log(`\n✅ ${chalk.green("Setup complete!")}`);
   console.log(`\n📦 Folder structure:\n`);
   console.log(`${projectName}/`);
   if (frontend !== "none") console.log(" ├── client/   (frontend)");

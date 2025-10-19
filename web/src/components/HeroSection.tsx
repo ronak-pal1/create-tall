@@ -2,6 +2,9 @@ import { GoChevronRight } from "react-icons/go";
 import { MdOutlineCopyAll } from "react-icons/md";
 import { GetRequiredSvg } from "./svg";
 import terminalImage from "/terminal.png";
+import { Link } from "react-router-dom";
+import { LiaArrowRightSolid } from "react-icons/lia";
+import { ImNpm } from "react-icons/im";
 
 const HeroSection = () => {
   const handleCopy = () => {
@@ -9,9 +12,18 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="h-[80vh] md:h-screen w-full relative">
-      <div className="text-white w-full text-center flex flex-col justify-center items-center mt-36 lg:mt-10 gap-y-20">
-        <div className="text-center space-y-7 px-10 z-10">
+    <section className="h-[80vh] md:h-[120vh] w-full relative">
+      <div className="text-white w-full text-center flex flex-col justify-center items-center mt-24 lg:mt-7 gap-y-20">
+        <div className="text-center space-y-7 sm:space-y-10 flex flex-col justify-center items-center px-10 z-10">
+          <Link
+            to="https://www.npmjs.com/package/create-tall"
+            target="_blank"
+            className="w-fit text-black bg-neutral-200 px-10 py-2 text-[10px] rounded-lg cursor-pointer hover:scale-105 transition-all font-light flex items-center gap-x-4 hover:shadow-2xl hover:shadow-orange-500"
+          >
+            <ImNpm color="red" />
+            <p>View NPM Package</p>
+            <LiaArrowRightSolid />
+          </Link>
           <h2 className="text-2xl sm:text-3xl font-bold">Create Tall CLI</h2>
           <p className="text-sm sm:text-lg font-light">
             A powerful tool to create any stack applications with ease and all
@@ -44,28 +56,48 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="absolute right-20 top-36 sm:top-40 rotate-12 opacity-45 z-0">
-        <GetRequiredSvg logoName="tailwindcss" size={window.innerWidth < 1024 ? 60 : 100} />
+      <div className="absolute right-20 top-44 sm:top-40 rotate-12 opacity-45 z-0">
+        <GetRequiredSvg
+          logoName="tailwindcss"
+          size={window.innerWidth < 1024 ? 60 : 100}
+        />
       </div>
 
-      <div className="absolute left-10 top-30 rotate-12 opacity-45 z-0">
-        <GetRequiredSvg logoName="reactjs" size={window.innerWidth < 1024 ? 60 : 100} />
+      <div className="absolute left-10 top-40 sm:top-30 rotate-12 opacity-45 z-0">
+        <GetRequiredSvg
+          logoName="reactjs"
+          size={window.innerWidth < 1024 ? 60 : 100}
+        />
       </div>
 
       <div className="absolute left-14 top-[350px] rotate-12 opacity-45 z-0">
-        <GetRequiredSvg logoName="nextjs" size={window.innerWidth < 1024 ? 60 : 70} />
+        <GetRequiredSvg
+          logoName="nextjs"
+          size={window.innerWidth < 1024 ? 60 : 70}
+        />
       </div>
 
       <div className="absolute left-36 top-[300px] md:top-[500px] -rotate-12 opacity-45 z-0">
-        <GetRequiredSvg logoName="redux" size={window.innerWidth < 1024 ? 60 : 80} />
+        <GetRequiredSvg
+          logoName="redux"
+          size={window.innerWidth < 1024 ? 60 : 80}
+        />
       </div>
 
       <div className="absolute right-40 top-[300px] md:top-[500px] rotate-12 opacity-45 z-0">
-        <GetRequiredSvg logoName="expressjs" size={window.innerWidth < 1024 ? 60 : 80} color="#61DAFB" />
+        <GetRequiredSvg
+          logoName="expressjs"
+          size={window.innerWidth < 1024 ? 60 : 80}
+          color="#61DAFB"
+        />
       </div>
 
       <div className="absolute right-14 top-[350px] rotate-12 opacity-45 z-0">
-        <GetRequiredSvg logoName="go" size={window.innerWidth < 1024 ? 60 : 80} color="#61DAFB" />
+        <GetRequiredSvg
+          logoName="go"
+          size={window.innerWidth < 1024 ? 60 : 80}
+          color="#61DAFB"
+        />
       </div>
     </section>
   );

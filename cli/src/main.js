@@ -11,12 +11,15 @@ import { printBanner } from "./utils/print.banner.js";
 import checkCommand from "./commands/check.command.js";
 import { frontendTemplates } from "./prompts/frontend.prompt.js";
 import { backendTemplates } from "./prompts/backend.prompt.js";
+import chalk from "chalk";
 
 export async function main() {
   const { project: cmdProject, frontend: cmdFrontend, backend: cmdBackend, cicd: cmdCICD, prompt: cmdPrompt } = checkCommand();
 
   printBanner("Create    Tall");
-  console.log("\n🚀 Welcome to create-tall CLI (Create Template All CLI)\n");
+  console.log(`\n🚀 Welcome to create-tall CLI (Create Template All CLI)\n`);
+
+  console.log(`\n⚠️ ${chalk.yellow("DISCLAMER: Create Tall is still in development and may not work as expected. We are working hard to make it production ready for all templates.")}\n\n`)
 
 
   const projectName = cmdProject || await promptProjectName();
